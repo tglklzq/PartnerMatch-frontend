@@ -6,7 +6,7 @@
             @click-left="onClickLeft"
             @click-right="onClickRight"
     >
-        <template #right v-if="title === '匹配xxx'">
+        <template #right v-if="title === '匹配'">
             <van-icon name="search" size="18"/>
         </template>
     </van-nav-bar>
@@ -17,7 +17,7 @@
         <van-tabbar-item to="/" icon="home-o" name="index">主页</van-tabbar-item>
         <van-tabbar-item to="/team" icon="friends-o" name="team">聊天室</van-tabbar-item>
         <van-tabbar-item to="/message" icon="search" name="team">消息</van-tabbar-item>
-        <van-tabbar-item to="/user" icon="user-o" name="user">个人</van-tabbar-item>
+        <van-tabbar-item to="/user" icon="user-o" name="user">我的</van-tabbar-item>
     </van-tabbar>
 </template>
 

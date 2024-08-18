@@ -17,7 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import {TeamType} from "../models/team";
+import {TeamType} from "@/models/team";
 
 import teamIcon from "../assets/images/team-icon.png";
 import fullTeamIcon from "../assets/images/full-team-icon.png";
@@ -62,18 +62,19 @@ const toTeamDetail = async (team: any) => {
 <style scoped>
 .body-card {
     float: left;
-    margin: 15px 10px;
+    margin: 10px 10px;
     display: flex;
     flex-direction: column;
     width: 150px;
     border-radius: 15px;
-    box-shadow: 5px 5px 10px #888;
+    box-shadow: 1px 1px 1px #888;
+    overflow: hidden;
 }
 
 .card-img {
-    height: 180px;
+    height: 160px;
     width: 100%;
-    border-radius: 15px;
+    border-radius: 10px;
 }
 
 .card-content {
@@ -98,13 +99,13 @@ const toTeamDetail = async (team: any) => {
     padding: 0 0 0 8px;
 }
 .team-icon {
-    height: 18px;
+    height: 20px;
     margin-top: -5px;
     margin-right: 8px;
 }
 
 .team-size {
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
 }
 
