@@ -18,6 +18,7 @@ import UserSettingPage from "../pages/UserSettingPage.vue";
 import UserAboutPage from "../pages/UserAboutPage.vue";
 import UserChatPage from "../pages/UserChatPage.vue";
 import UserRegisterPage from "../pages/UserRegisterPage.vue";
+import UserFeedbackPage from "../pages/UserFeedbackPage.vue";
 
 
 const routes = [
@@ -127,6 +128,12 @@ const routes = [
         title: '关于我们',
         meta: {showBottom: true, showHeader: true, showBack: true},
         component: UserAboutPage
+    },
+    {
+        path:'/user/feedback',
+        title: '意见反馈',
+        meta: {showBottom: true, showHeader: true, showBack: true},
+        component: UserFeedbackPage
     },
     {
         name: 'userChat',
