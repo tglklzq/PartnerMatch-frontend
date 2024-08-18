@@ -2,7 +2,7 @@
     <div id="teamCardList">
         <van-card
                 v-for="team in props.teamList"
-                :thumb="ikun"
+                :thumb="teamIcon"
                 :desc="team.description"
                 :title="`${team.name}`"
         >
@@ -55,16 +55,16 @@
 </template>
 
 <script setup lang="ts">
-import {TeamType} from "../models/team";
-import {teamStatusEnum} from "../constants/team";
-import ikun from '../assets/images/ikun.png';
+import {TeamType} from "@/models/team";
+import {teamStatusEnum} from "@/constants/team";
+import teamIcon from '../assets/images/team-icon.png';
 import request from "../plugins/request";
 import {showFailToast, showSuccessToast} from "vant";
 import {onMounted, ref} from "vue";
-import {getCurrentUser} from "../services/user";
+import {getCurrentUser} from "@/services/user";
 import {useRouter} from "vue-router";
 import moment from "moment";
-import {joinTeam} from "../services/team";
+import {joinTeam} from "@/services/team";
 
 interface TeamCardListProps {
     teamList: TeamType[];

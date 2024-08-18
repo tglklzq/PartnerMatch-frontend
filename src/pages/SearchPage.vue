@@ -52,14 +52,24 @@ const originTextList = [
         ],
     },
     {
-        text: '语言',
+        text: '编程语言',
         children: [
             {text: 'c++', id: 'c++'},
             {text: 'python', id: 'python'},
             {text: 'java', id: 'java'},
             {text: 'go', id: 'go'}
         ],
+    },
+    {
+      text: '学历',
+      children:[
+        {text: '本科', id: '本科'},
+        {text: '硕士', id: '硕士'},
+        {text: '博士', id: '博士'},
+        {text: '其他', id: '其他'}
+      ]
     }
+
 ]
 const tagList = ref(originTextList);
 const onSearch = (val) => {

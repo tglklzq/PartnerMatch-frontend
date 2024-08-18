@@ -29,7 +29,7 @@
                     登陆遇到问题？
                 </div>
                 <div style="width:88%; margin: 0 auto; padding-top: 35px">
-                    <van-button style="border-radius: 10px" color="linear-gradient(to right, #ff6034, #ee0a24)" block
+                    <van-button style="border-radius: 10px" color="linear-gradient(to right, #1347ff, #1347ff)" block
                                 :disabled="isEnableBtn"
                                 type="primary" native-type="submit">
                         登陆
@@ -93,14 +93,10 @@ const goRegister = () => {
  */
 const showHasQuestion = () => {
     showConfirmDialog({
-        message: '系统问题请联系开发者wx:Hyer-z\n（虽然联系他也不会理你，哈哈哈~）',
+        message: '尚未开发',
         theme: 'round-button',
-        confirmButtonText: '联系开发者',
+        //confirmButtonText: '联系开发者',
         showCancelButton: false,
-    }).then(() => {
-        showWx.value = true
-    }).catch(() => {
-        showWx.value = false
     })
 }
 

@@ -32,7 +32,7 @@
                     name="datetimePicker"
                     label="过期时间"
                     :placeholder="expireTimeStr ?? '点击选择过期时间'"
-                    @click="showPicker = true"
+                    @click="showPicker = true; onPickerShow()"
                 />
                 <van-popup v-model:show="showPicker" position="bottom">
                     <van-picker-group
@@ -95,10 +95,11 @@ const route = useRoute();
 const showPicker = ref(false);
 
 const minDate = new Date();
-
+// todo 去除过期时间段
 const currentDate = ref([]);
-const currentTime = ref([]);
-const expireTimeStr = ref('');
+const defaultTime = new Date(minDate.getTime() + 2 * 60 * 60 * 1000);
+const currentTime = ref([defaultTime.getHours(), defaultTime.getMinutes()]);
+const expireTimeStr = ref(moment(defaultTime).format("YYYY/MM/DD HH:mm"));
 
 const id = route.query.id;
 
@@ -155,7 +156,20 @@ const onConfirm = async () => {
     addTeamData.value.expireTime = new Date(dateTime)
     expireTimeStr.value = dateTime
 }
+const onPickerShow = () => {
+  const now = new Date();
+  const selectedDate = new Date(currentDate.value[0], currentDate.value[1] - 1, currentDate.value[2]);
 
+  // 如果选中的日期是今天，设置时间选择的最小值为当前时间的小时和分钟
+  if (selectedDate.toDateString() === now.toDateString()) {
+    currentTime.value = [
+      Math.max(now.getHours(), currentTime.value[0]),
+      currentTime.value[0] === now.getHours() ? Math.max(now.getMinutes(), currentTime.value[1]) : currentTime.value[1],
+    ];
+  } else {
+    currentTime.value = [defaultTime.getHours(), defaultTime.getMinutes()];
+  }
+}
 // 提交
 const onSubmit = async () => {
     const postData = {

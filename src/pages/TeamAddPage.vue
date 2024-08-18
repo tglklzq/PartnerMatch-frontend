@@ -99,7 +99,7 @@ const showPicker = ref(false);
 
 const initFormData = {
     "name": "",
-    "teamImage": "https://image-bed-ichensw.oss-cn-hangzhou.aliyuncs.com/006VVqOWgy1h43uaynbyxj30go0go0u7.jpg",
+    "teamImage": "https://s21.ax1x.com/2024/08/18/pAPFmGT.png",
     "description": "",
     "expireTime": null as Date | null,
     "maxNum": 10,

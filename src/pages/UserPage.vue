@@ -11,11 +11,11 @@
             <div v-if="user.username">{{ user.username }}</div>
             <div class="tagsStyle">
                 <van-tag v-for="tag in tagList" style="margin: 4px" :show="true" closeable size="medium" plain
-                         color="#f03d37"
+                         color="#390dff"
                          @close="delTag(tag)">
                     {{ tag }}
                 </van-tag>
-                <van-tag style="margin: 4px" :show="true" size="medium" plain color="#f03d37" @click="showAddTag">
+                <van-tag style="margin: 4px" :show="true" size="medium" plain color="#390dff" @click="showAddTag">
                     +
                 </van-tag>
                 <!-- 底部弹出 -->
@@ -38,11 +38,12 @@
             </div>
         </div>
         <van-grid :column-num="3">
-            <van-grid-item icon="manager-o" text="个人资料" is-link to="/user/info"/>
-            <van-grid-item icon="flag-o" text="创建的队伍" is-link to="/user/team/create"/>
-            <van-grid-item icon="friends-o" text="加入的队伍" is-link to="/user/team/join"/>
-            <van-grid-item icon="setting-o" text="设置" is-link to="/user/settings"/>
-            <van-grid-item icon="question-o" text="关于我们" is-link @click="showFailToast('开发中')"/>
+            <van-grid-item icon="user-o" text="个人资料" is-link to="/user/info"/>
+            <van-grid-item icon="friends-o" text="加入的聊天室" is-link to="/user/team/join"/>
+            <van-grid-item icon="flag-o" text="创建的聊天室" is-link to="/user/team/create"/>
+            <van-grid-item icon="setting-o" text="系统设置" is-link to="/user/settings"/>
+            <van-grid-item icon="more-o" text="意见反馈" is-link @click="showFailToast('不，你并没有意见')"/>
+            <van-grid-item icon="question-o" text="关于系统" is-link @click="showFailToast('开发中')"/>
         </van-grid>
     </template>
 </template>
@@ -138,7 +139,7 @@ const delTag = (tag: string) => {
 
 <style scoped>
 .cover {
-    background-color: #f03d37;
+    background-color: #3750f0;
     padding: 40px 0;
     text-align: center;
     color: #fff;

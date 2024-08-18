@@ -83,7 +83,7 @@ const receiveType = route.params.receiveType
 const status = route.params.status
 
 const scrollerHeight = computed(() => {
-    return (window.innerHeight - 50) + 'px'; //自定义高度需求
+    return (window.innerHeight -100) + 'px'; //自定义高度需求
 })
 /**
  * 页面加载时
